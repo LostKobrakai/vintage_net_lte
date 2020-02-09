@@ -42,6 +42,15 @@ defmodule VintageNetLTE.Modems.QuectelBG96 do
     }
   end
 
+  @impl true
+  def available do
+    if File.exists?("/dev/ttyUSB3") do
+      :ok
+    else
+      {:error, :modem_not_connected}
+    end
+  end
+
   defp chatscript(provider_info) do
     """
     # Exit execution if module receives any of the following strings:

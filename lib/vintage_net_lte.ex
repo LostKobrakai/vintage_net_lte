@@ -21,6 +21,7 @@ defmodule VintageNetLTE do
     files = [{chatscript_path(ifname, opts), modem_spec.chatscript}]
 
     up_cmds = [
+      {:fun, modem, :available, []},
       {:run_ignore_errors, "mknod", ["/dev/ppp", "c", "108", "0"]}
     ]
 

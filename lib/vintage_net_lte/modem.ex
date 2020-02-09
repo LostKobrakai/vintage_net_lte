@@ -20,4 +20,9 @@ defmodule VintageNetLTE.Modem do
   Return the modem spec
   """
   @callback spec(VintageNetLTE.provider_info()) :: spec()
+
+  @doc """
+  Return the modem spec
+  """
+  @callback available() :: :ok | {:error, term}
 end

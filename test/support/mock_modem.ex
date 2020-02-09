@@ -5,4 +5,6 @@ defmodule VintageNetLTE.Modems.MockModem do
   def spec(_provider_info) do
     %{serial_port: "/dev/null", serial_speed: 115_200, chatscript: ""}
   end
+
+  def available, do: :ok
 end
